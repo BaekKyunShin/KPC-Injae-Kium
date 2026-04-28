@@ -1,0 +1,425 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "한국생산성본부 (KPC)" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "한국생산성본부 KPC" [ref=e5]
+      - button "메뉴 열기" [ref=e6] [cursor=pointer]
+      - navigation [ref=e10]:
+        - link "과정 찾아보기 →" [ref=e11] [cursor=pointer]:
+          - /url: courses.html
+  - generic [ref=e12]:
+    - generic [ref=e13]: 2026 상·하반기 과정 접수 중
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: 한국생산성본부 직무교육센터
+        - generic [ref=e19]: 문의 02-724-1803 ~ 1806
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - generic [ref=e22]: 우선지원대상기업 재직자를 위한 직무교육
+          - heading "KPC 직무교육, 수강료 90% 환급" [level=1] [ref=e23]:
+            - text: KPC 직무교육,
+            - emphasis [ref=e24]: 수강료 90% 환급
+          - paragraph [ref=e25]:
+            - text: KPC 직무교육센터가 운영하는 직무교육 201개 과정
+            - text: 우선지원대상기업 재직자는 수료 후 교육비 90%를 환급받습니다.
+            - text: 실질 교육비는 10%만 부담하시면 됩니다.
+          - generic [ref=e26]:
+            - link "과정 찾아보기 →" [ref=e27] [cursor=pointer]:
+              - /url: courses.html
+              - text: 과정 찾아보기
+              - generic [ref=e28]: →
+            - link "지원 대상 확인" [ref=e29] [cursor=pointer]:
+              - /url: "#eligibility"
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - img [ref=e32]:
+              - generic [ref=e39]: 90%
+              - generic [ref=e40]: REFUND RATE
+            - generic [ref=e42]: 교육비 환급률
+          - generic [ref=e43]:
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - text: "201"
+                - subscript [ref=e46]: 개 과정
+              - generic [ref=e47]: 고유 커리큘럼
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - text: "575"
+                - subscript [ref=e50]: 개 차수
+              - generic [ref=e51]: 2026년 6월~12월 차수
+    - generic [ref=e53]:
+      - generic [ref=e54]: 수강료 90% 환급 ◆
+      - generic [ref=e55]: 재직자 전용 직무교육 ◆
+      - generic [ref=e56]: 8개 직무 분야 ◆
+      - generic [ref=e57]: 집합 교육 · 오프라인 ◆
+      - generic [ref=e58]: 201개 고유 커리큘럼 ◆
+      - generic [ref=e59]: 575개 연간 차수 ◆
+      - generic [ref=e60]: 서울 · 천안 · 부산 · 대구 · 대전 ◆
+      - generic [ref=e61]: 2026년 6월 – 12월 ◆
+      - generic [ref=e62]: 수강료 90% 환급 ◆
+      - generic [ref=e63]: 재직자 전용 직무교육 ◆
+      - generic [ref=e64]: 8개 직무 분야 ◆
+      - generic [ref=e65]: 집합 교육 · 오프라인 ◆
+      - generic [ref=e66]: 201개 고유 커리큘럼 ◆
+      - generic [ref=e67]: 575개 연간 차수 ◆
+      - generic [ref=e68]: 서울 · 천안 · 부산 · 대구 · 대전 ◆
+      - generic [ref=e69]: 2026년 6월 – 12월 ◆
+  - generic [ref=e72]:
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - text: "90"
+        - subscript [ref=e75]: "%"
+      - generic [ref=e76]: 수강료 환급률
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - text: "201"
+        - subscript [ref=e79]: 개
+      - generic [ref=e80]: 고유 과정 수
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - text: "8"
+        - subscript [ref=e83]: 개 분야
+      - generic [ref=e84]: 직무 대분류
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - text: "5"
+        - subscript [ref=e87]: 곳
+      - generic [ref=e88]: 전국 교육장
+  - generic [ref=e90]:
+    - generic [ref=e91]:
+      - generic [ref=e93]: 01 · About
+      - heading "재직자의 성장을 고용보험이 함께 부담하는 직업능력개발 훈련 제도, 인재키움." [level=2] [ref=e94]:
+        - emphasis [ref=e95]: 재직자의 성장을 고용보험이 함께 부담하는
+        - text: 직업능력개발 훈련 제도, 인재키움.
+    - generic [ref=e96]:
+      - generic [ref=e97]:
+        - generic [ref=e98]: "01"
+        - heading "최대 90% 환급" [level=3] [ref=e99]
+        - paragraph [ref=e100]: 우선지원대상기업 재직자는 과정 수료 후, 수강료 90%를 고용보험기금으로 환급받습니다. 기업이 납부한 고용보험료 내에서 지원금이 처리됩니다.
+      - generic [ref=e101]:
+        - generic [ref=e102]: "02"
+        - heading "NCS 기반 직무 역량" [level=3] [ref=e103]
+        - paragraph [ref=e104]: 생산, 품질, R&D, 구매·자재, ISO, 탄소중립부터 마케팅·영업, 물류·무역·SCM까지, 실무에서 바로 쓰이는 8개 분야. 국내 최고 전문가가 실무 중심 강의로 전달합니다.
+      - generic [ref=e105]:
+        - generic [ref=e106]: "03"
+        - heading "전국 5개 강의장" [level=3] [ref=e107]
+        - paragraph [ref=e108]: 서울·천안·부산·대구·대전에서 동일한 퀄리티로 운영됩니다. 지방 근무 재직자도 출장 없이 가까운 강의장에서 수강할 수 있습니다.
+  - separator [ref=e109]
+  - generic [ref=e111]:
+    - generic [ref=e112]:
+      - generic [ref=e113]: 02 · 실제 부담액
+      - heading "60만원 짜리 과정을 6만원에 듣을 수 있는 기회" [level=2] [ref=e114]:
+        - text: 60만원 짜리 과정을
+        - emphasis [ref=e115]: 6만원
+        - text: 에 듣을 수 있는 기회
+      - paragraph [ref=e116]: 우선지원대상기업 재직자는 수료 후 수강료 90%를 환급받아, 실질 자기부담은 정가의 10% 수준으로 책정됩니다. 과정별로 금액은 상이합니다.
+      - generic [ref=e117]:
+        - link "우선지원대상기업 조회 ↗" [ref=e118] [cursor=pointer]:
+          - /url: https://kpc.or.kr/refund/index.html
+          - text: 우선지원대상기업 조회
+          - generic [ref=e119]: ↗
+        - link "지원 대상자 기준" [ref=e120] [cursor=pointer]:
+          - /url: https://www.kpc.or.kr/PTWED002_recipient.do
+    - generic "환급 계산 예시" [ref=e121]:
+      - generic [ref=e122]:
+        - generic [ref=e123]: 과정 정가
+        - generic [ref=e124]: ₩ 600,000
+      - generic [ref=e125]:
+        - generic [ref=e126]: 인재키움 환급 (90%)
+        - generic [ref=e127]: − ₩ 540,000
+      - generic [ref=e128]:
+        - generic [ref=e129]: 실제 부담액
+        - generic [ref=e130]: ₩ 60,000
+  - generic [ref=e132]:
+    - generic [ref=e133]:
+      - generic [ref=e135]: 03 · Eligibility
+      - heading "우리 회사가 우선지원대상기업인지 먼저 조회하세요." [level=2] [ref=e136]:
+        - emphasis [ref=e137]: 우리 회사가 우선지원대상기업인지
+        - text: 먼저 조회하세요.
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - generic [ref=e141]: STEP 01
+          - heading "우선지원대상기업 여부 조회" [level=3] [ref=e142]
+          - paragraph [ref=e143]: KPC 조회 시스템에서 사업자등록번호만 입력하면 즉시 확인할 수 있습니다. 대상 기업에 속해야 90% 환급이 적용됩니다.
+        - link "우선지원대상기업 여부 조회하기 ↗" [ref=e145] [cursor=pointer]:
+          - /url: https://kpc.or.kr/refund/index.html
+          - text: 우선지원대상기업 여부 조회하기
+          - generic [ref=e146]: ↗
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - generic [ref=e149]: STEP 02
+          - heading "개인별 지원 대상자 기준 확인" [level=3] [ref=e150]
+          - paragraph [ref=e151]: 고용보험 가입 재직자 여부, 연간 지원한도, 자비 부담 요건 등 개인별 세부 조건을 KPC 공식 안내에서 확인하세요.
+        - link "KPC 인재키움제도 세부 안내 ↗" [ref=e153] [cursor=pointer]:
+          - /url: https://www.kpc.or.kr/PTWED002_recipient.do
+          - text: KPC 인재키움제도 세부 안내
+          - generic [ref=e154]: ↗
+  - separator [ref=e155]
+  - generic [ref=e157]:
+    - generic [ref=e158]:
+      - generic [ref=e160]: 04 · Categories
+      - heading "8개 분야, 원하는 과정을 골라보세요." [level=2] [ref=e161]:
+        - text: 8개 분야,
+        - emphasis [ref=e162]: 원하는 과정을 골라보세요.
+    - generic [ref=e163]:
+      - link "생산 37개 생산관리 · 스마트공장 · 설비관리(TPM) 과정 보기 →" [ref=e164] [cursor=pointer]:
+        - /url: courses.html?cat=%EC%83%9D%EC%82%B0
+        - generic [ref=e165]:
+          - img [ref=e167]
+          - generic [ref=e170]:
+            - heading "생산" [level=3] [ref=e171]
+            - generic [ref=e172]: 37개
+          - paragraph [ref=e173]: 생산관리 · 스마트공장 · 설비관리(TPM)
+        - generic [ref=e174]: 과정 보기 →
+      - link "품질 27개 품질관리 · 신뢰성 · 6시그마 과정 보기 →" [ref=e175] [cursor=pointer]:
+        - /url: courses.html?cat=%ED%92%88%EC%A7%88
+        - generic [ref=e176]:
+          - img [ref=e178]
+          - generic [ref=e181]:
+            - heading "품질" [level=3] [ref=e182]
+            - generic [ref=e183]: 27개
+          - paragraph [ref=e184]: 품질관리 · 신뢰성 · 6시그마
+        - generic [ref=e185]: 과정 보기 →
+      - link "구매·자재 29개 구매관리 · 재고관리 과정 보기 →" [ref=e186] [cursor=pointer]:
+        - /url: courses.html?cat=%EA%B5%AC%EB%A7%A4%C2%B7%EC%9E%90%EC%9E%AC
+        - generic [ref=e187]:
+          - img [ref=e189]
+          - generic [ref=e192]:
+            - heading "구매·자재" [level=3] [ref=e193]
+            - generic [ref=e194]: 29개
+          - paragraph [ref=e195]: 구매관리 · 재고관리
+        - generic [ref=e196]: 과정 보기 →
+      - link "R＆D 21개 R＆D기획 · 혁신·지식재산 과정 보기 →" [ref=e197] [cursor=pointer]:
+        - /url: courses.html?cat=R%EF%BC%86D
+        - generic [ref=e198]:
+          - img [ref=e200]
+          - generic [ref=e202]:
+            - heading "R＆D" [level=3] [ref=e203]
+            - generic [ref=e204]: 21개
+          - paragraph [ref=e205]: R＆D기획 · 혁신·지식재산
+        - generic [ref=e206]: 과정 보기 →
+      - link "마케팅·영업 45개 영업전략 · 마케팅 · 홍보·브랜드 과정 보기 →" [ref=e207] [cursor=pointer]:
+        - /url: courses.html?cat=%EB%A7%88%EC%BC%80%ED%8C%85%C2%B7%EC%98%81%EC%97%85
+        - generic [ref=e208]:
+          - img [ref=e210]
+          - generic [ref=e212]:
+            - heading "마케팅·영업" [level=3] [ref=e213]
+            - generic [ref=e214]: 45개
+          - paragraph [ref=e215]: 영업전략 · 마케팅 · 홍보·브랜드
+        - generic [ref=e216]: 과정 보기 →
+      - link "유통·물류·SCM·무역 22개 유통·물류·SCM · 무역 과정 보기 →" [ref=e217] [cursor=pointer]:
+        - /url: courses.html?cat=%EC%9C%A0%ED%86%B5%C2%B7%EB%AC%BC%EB%A5%98%C2%B7SCM%C2%B7%EB%AC%B4%EC%97%AD
+        - generic [ref=e218]:
+          - img [ref=e220]
+          - generic [ref=e225]:
+            - heading "유통·물류·SCM·무역" [level=3] [ref=e226]
+            - generic [ref=e227]: 22개
+          - paragraph [ref=e228]: 유통·물류·SCM · 무역
+        - generic [ref=e229]: 과정 보기 →
+      - link "ISO 경영시스템 16개 ISO 경영시스템 과정 보기 →" [ref=e230] [cursor=pointer]:
+        - /url: courses.html?cat=ISO%20%EA%B2%BD%EC%98%81%EC%8B%9C%EC%8A%A4%ED%85%9C
+        - generic [ref=e231]:
+          - img [ref=e233]
+          - generic [ref=e236]:
+            - heading "ISO 경영시스템" [level=3] [ref=e237]
+            - generic [ref=e238]: 16개
+          - paragraph [ref=e239]: ISO 경영시스템
+        - generic [ref=e240]: 과정 보기 →
+      - link "탄소중립 4개 탄소중립 실무 · 전략 과정 보기 →" [ref=e241] [cursor=pointer]:
+        - /url: courses.html?cat=%ED%83%84%EC%86%8C%EC%A4%91%EB%A6%BD
+        - generic [ref=e242]:
+          - img [ref=e244]
+          - generic [ref=e247]:
+            - heading "탄소중립" [level=3] [ref=e248]
+            - generic [ref=e249]: 4개
+          - paragraph [ref=e250]: 탄소중립 실무 · 전략
+        - generic [ref=e251]: 과정 보기 →
+    - link "전체 과정 목록 보기 →" [ref=e253] [cursor=pointer]:
+      - /url: courses.html
+      - text: 전체 과정 목록 보기
+      - generic [ref=e254]: →
+  - generic [ref=e256]:
+    - generic [ref=e257]:
+      - generic [ref=e259]: 05 · Process
+      - heading "신청부터 환급까지, 4단계로 완료됩니다." [level=2] [ref=e260]:
+        - text: 신청부터 환급까지,
+        - emphasis [ref=e261]: 4단계로 완료됩니다.
+    - generic [ref=e262]:
+      - generic [ref=e263]:
+        - generic [ref=e264]: STEP 01
+        - img [ref=e266]
+        - generic [ref=e270]: "01"
+        - heading "우선지원대상기업 확인" [level=3] [ref=e271]
+        - paragraph [ref=e272]: 사업자등록번호로 재직 중인 회사가 환급 대상에 해당하는지 먼저 조회합니다.
+        - link "조회하기 →" [ref=e273] [cursor=pointer]:
+          - /url: https://kpc.or.kr/refund/index.html
+      - generic [ref=e274]:
+        - generic [ref=e275]: STEP 02
+        - img [ref=e277]
+        - generic [ref=e281]: "02"
+        - heading "과정 선택 및 수강 신청" [level=3] [ref=e282]
+        - paragraph [ref=e283]: 일정·지역·직무에 맞는 과정을 골라 KPC 홈페이지에서 수강 신청서를 제출합니다.
+        - link "과정 목록 →" [ref=e284] [cursor=pointer]:
+          - /url: courses.html
+      - generic [ref=e285]:
+        - generic [ref=e286]: STEP 03
+        - img [ref=e288]
+        - generic [ref=e291]: "03"
+        - heading "수강료 납부 후 수강" [level=3] [ref=e292]
+        - paragraph [ref=e293]: 정가 납부 후 교육에 참여합니다. 출석률 80% 이상 및 과정 수료가 환급 요건입니다.
+      - generic [ref=e294]:
+        - generic [ref=e295]: STEP 04
+        - img [ref=e297]
+        - generic [ref=e299]: "04"
+        - heading "수료 후 90% 환급" [level=3] [ref=e300]
+        - paragraph [ref=e301]: 서류가 갖춰진 경우, 교육 종료 후 2~3달 후 환급이 됩니다. KPC 대행 신청도 가능합니다.
+  - generic [ref=e303]:
+    - generic [ref=e304]:
+      - generic [ref=e306]: 06 · Stories
+      - heading "실무자가 전하는 수강 후기." [level=2] [ref=e307]:
+        - text: 실무자가 전하는
+        - emphasis [ref=e308]: 수강 후기.
+    - generic [ref=e309]:
+      - generic [ref=e310]:
+        - generic [ref=e311]: 생산
+        - generic [ref=e312]:
+          - generic [ref=e313]: “
+          - paragraph [ref=e314]: 생산 현장에서 매일 쌓이는 이슈 보고와 작업일지를 ChatGPT로 정리하는 실습이 가장 실용적이었습니다. 강사님이 라인별 데이터 형식에 맞춘 프롬프트를 직접 만들어주셔서, 회사 복귀 후 바로 적용했습니다.
+        - generic [ref=e315]:
+          - img [ref=e317]
+          - generic [ref=e322]:
+            - generic [ref=e323]: 김○○ · 생산관리 과장
+            - generic [ref=e324]: 생산담당자를 위한 ChatGPT 활용 기초
+      - generic [ref=e325]:
+        - generic [ref=e326]: 구매
+        - generic [ref=e327]:
+          - generic [ref=e328]: “
+          - paragraph [ref=e329]: 협력사 견적 비교와 단가 분석에 ChatGPT와 Gemini를 어떻게 함께 쓰는지를 직접 실습해본 게 가장 큰 수확이었습니다. 협상 시나리오를 미리 준비하는 워크플로도 그대로 팀에 공유했습니다.
+        - generic [ref=e330]:
+          - img [ref=e332]
+          - generic [ref=e337]:
+            - generic [ref=e338]: 이○○ · 구매팀 차장
+            - generic [ref=e339]: ChatGPT와 Gemini를 활용한 구매관리 혁신
+      - generic [ref=e340]:
+        - generic [ref=e341]: 마케팅
+        - generic [ref=e342]:
+          - generic [ref=e343]: “
+          - paragraph [ref=e344]: 디지털 채널별 콘텐츠 톤앤매너를 ChatGPT로 빠르게 변형해보는 실습이 좋았습니다. 단순 카피 생성을 넘어, 캠페인 기획 단계에서 AI를 어떻게 끌어들일지에 대한 관점이 잡혔습니다.
+        - generic [ref=e345]:
+          - img [ref=e347]
+          - generic [ref=e352]:
+            - generic [ref=e353]: 박○○ · 마케팅팀 대리
+            - generic [ref=e354]: 마케팅의 판도를 바꾼다! 마케팅 AI(ChatGPT)의 모든 것
+      - generic [ref=e355]:
+        - generic [ref=e356]: R&D
+        - generic [ref=e357]:
+          - generic [ref=e358]: “
+          - paragraph [ref=e359]: 정부 연구과제제안서 작성에 ChatGPT를 활용하는 실전 노하우를 배운 게 가장 도움이 됐습니다. 실제 기획서 양식에 맞춰 단계별로 프롬프트를 짜는 실습이라, 복귀 직후 진행 중이던 과제에 바로 적용했습니다.
+        - generic [ref=e360]:
+          - img [ref=e362]
+          - generic [ref=e368]:
+            - generic [ref=e369]: 정○○ · 책임연구원
+            - generic [ref=e370]: 생성형 AI 활용 (정부)연구과제제안서 작성 노하우
+  - separator [ref=e371]
+  - generic [ref=e373]:
+    - generic [ref=e374]:
+      - generic [ref=e376]: 07 · FAQ
+      - heading "자주 묻는 질문." [level=2] [ref=e377]:
+        - text: 자주 묻는
+        - emphasis [ref=e378]: 질문.
+    - generic [ref=e379]:
+      - generic [ref=e380]:
+        - generic [ref=e381] [cursor=pointer]:
+          - generic [ref=e382]: Q.01
+          - generic [ref=e383]: 인재키움과 일반 환급 과정의 차이는 무엇인가요?
+          - generic [ref=e384]: +
+        - generic [ref=e385]: 인재키움은 우선지원대상기업 재직자를 위해 KPC가 운영하는 집합과정 중 환급이 적용되는 과정군을 통칭합니다. 직무교육센터 인재키움 과정은 정가 기준 90% 환급이 적용되며, 수료 및 출석 요건 충족 시 고용보험기금에서 교육비가 환급됩니다.
+      - generic [ref=e386]:
+        - generic [ref=e387] [cursor=pointer]:
+          - generic [ref=e388]: Q.02
+          - generic [ref=e389]: 우선지원대상기업이 아닌 경우에도 수강할 수 있나요?
+          - generic [ref=e390]: +
+        - generic [ref=e391]:
+          - text: 수강 자체는 가능합니다. 다만 90% 환급은 우선지원대상기업 재직자에 한해 적용됩니다.
+          - text: 그 외 기업은 고용보험료 납부 내역 및 기업 규모에 따라 환급률이 달라질 수 있으므로,
+          - link "KPC 조회 페이지" [ref=e392] [cursor=pointer]:
+            - /url: https://kpc.or.kr/refund/index.html
+          - text: 에서 먼저 확인하시길 권장합니다.
+      - generic [ref=e393]:
+        - generic [ref=e394] [cursor=pointer]:
+          - generic [ref=e395]: Q.03
+          - generic [ref=e396]: 환급을 받기 위한 최소 요건은 무엇인가요?
+          - generic [ref=e397]: +
+        - generic [ref=e398]:
+          - text: 기본 요건은 (1) 출석률 80% 이상, (2) 과정 수료, (3) 고용보험 가입 재직자입니다.
+          - text: 과정별 평가 기준이 있을 수 있으며, 환급 신청은 수료 후 정해진 기간 내에 처리되어야 합니다.
+      - generic [ref=e399]:
+        - generic [ref=e400] [cursor=pointer]:
+          - generic [ref=e401]: Q.04
+          - generic [ref=e402]: 한 해에 몇 개 과정까지 수강할 수 있나요?
+          - generic [ref=e403]: +
+        - generic [ref=e404]:
+          - text: 연간 환급 한도는 고용보험 규정에 따라 개인·기업별로 상이합니다. 대체로 연 200만원 내외 한도가 적용되지만,
+          - text: 기업의 고용보험료 납부액 및 근로자 수에 따라 달라지므로 개별 확인이 필요합니다.
+      - generic [ref=e405]:
+        - generic [ref=e406] [cursor=pointer]:
+          - generic [ref=e407]: Q.05
+          - generic [ref=e408]: 온라인 수강도 가능한가요?
+          - generic [ref=e409]: +
+        - generic [ref=e410]: 과정별로 상이합니다. 해당 과정의 담당자에게 문의 바랍니다.
+  - generic [ref=e412]:
+    - heading "지금 내 커리어에, 수강료 10%만 부담하는 투자를." [level=2] [ref=e413]:
+      - text: 지금 내 커리어에,
+      - emphasis [ref=e414]: 수강료 10%만
+      - text: 부담하는 투자를.
+    - generic [ref=e415]:
+      - link "과정 찾아보기 →" [ref=e416] [cursor=pointer]:
+        - /url: courses.html
+        - text: 과정 찾아보기
+        - generic [ref=e417]: →
+      - link "지원 대상 조회 ↗" [ref=e418] [cursor=pointer]:
+        - /url: https://kpc.or.kr/refund/index.html
+        - text: 지원 대상 조회
+        - generic [ref=e419]: ↗
+      - generic [ref=e420]:
+        - text: CONTACT
+        - generic [ref=e421]: 02-724-1803 ~ 1806
+  - contentinfo [ref=e422]:
+    - generic [ref=e423]:
+      - generic [ref=e424]:
+        - generic [ref=e425]:
+          - generic [ref=e426]: 한국생산성본부(KPC) · 인재키움
+          - paragraph [ref=e427]:
+            - text: 우선지원대상기업 재직자를 위한 직무 역량 강화 교육.
+            - text: 교육비 90% 환급 지원으로 개인의 성장을 함께 돕습니다.
+        - generic [ref=e428]:
+          - heading "문의" [level=4] [ref=e429]
+          - list [ref=e430]:
+            - listitem [ref=e431]: 02-724-1803
+            - listitem [ref=e432]: 02-724-1804
+            - listitem [ref=e433]: 02-724-1805
+            - listitem [ref=e434]: 02-724-1806
+        - generic [ref=e435]:
+          - heading "바로가기" [level=4] [ref=e436]
+          - list [ref=e437]:
+            - listitem [ref=e438]:
+              - link "전체 과정 보기" [ref=e439] [cursor=pointer]:
+                - /url: courses.html
+            - listitem [ref=e440]:
+              - link "우선지원기업 조회 ↗" [ref=e441] [cursor=pointer]:
+                - /url: https://kpc.or.kr/refund/index.html
+            - listitem [ref=e442]:
+              - link "지원 대상자 안내 ↗" [ref=e443] [cursor=pointer]:
+                - /url: https://www.kpc.or.kr/PTWED002_recipient.do
+        - generic [ref=e444]:
+          - heading "분야" [level=4] [ref=e445]
+          - list [ref=e446]:
+            - listitem [ref=e447]: 생산 / 품질 / R&D
+            - listitem [ref=e448]: 구매·자재 / 유통·물류·SCM
+            - listitem [ref=e449]: 마케팅·영업
+            - listitem [ref=e450]: ISO / 탄소중립
+      - generic [ref=e451]:
+        - generic [ref=e452]: KPC · 한국생산성본부 · 직무교육센터
+        - img "한국생산성본부 KPC" [ref=e453]

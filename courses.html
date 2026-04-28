@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전체 과정 · 인재키움 | 직무교육센터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260428m">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<style>
+/* Course card layout (과정 단위 그룹) */
+.c-list { display: flex; flex-direction: column; border-top: 2px solid var(--ink); }
+.c-card {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  transition: background 0.12s;
+}
+.c-card:hover { background: var(--surface); }
+.c-card-head {
+  display: grid;
+  grid-template-columns: 48px 148px minmax(260px, 1fr) 200px 220px 32px;
+  gap: 20px;
+  padding: 14px 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.c-card-no {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.c-card-cat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.c-card-pill {
+  display: inline-block;
+  padding: 4px 9px;
+  background: var(--tag-bg);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tag-fg);
+  white-space: nowrap;
+  align-self: flex-start;
+  letter-spacing: -0.005em;
+}
+.c-card-sub {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.c-card-name {
+  font-family: 'GmarketSans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--ink);
+  word-break: keep-all;
+}
+.c-card-name small {
+  display: block;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 3px;
+  letter-spacing: -0.005em;
+}
+.c-card-info {
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.c-card-info small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 2px;
+  font-weight: 400;
+}
+.c-card-info b { font-weight: 700; }
+.c-card-info .regions {
+  display: inline-flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 3px;
+}
+.c-card-info .region-tag {
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 11px;
+  padding: 2px 7px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
+}
+.c-card-price {
+  text-align: right;
+}
+.c-card-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-bottom: 2px;
+}
+.c-card-price-orig {
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 13px;
+  color: var(--hint);
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--hint);
+  letter-spacing: -0.005em;
+}
+.c-card-price-badge {
+  display: inline-block;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #FF3D3D;
+  background: #FFE8E8;
+  padding: 3px 7px;
+  line-height: 1.4;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.c-card-price-after {
+  font-family: 'GmarketSans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  display: block;
+}
+.c-card-price-after small {
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 2px;
+  letter-spacing: -0.005em;
+}
+.c-card-toggle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--ink);
+  text-align: center;
+  transition: transform 0.25s;
+  user-select: none;
+}
+.c-card.open .c-card-toggle { transform: rotate(45deg); }
+
+.c-sessions {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.c-card.open .c-sessions { max-height: 2000px; }
+.c-sessions-inner {
+  padding: 4px 4px 20px;
+  border-top: 1px dashed var(--rule);
+  margin-top: 2px;
+}
+.c-sessions-hd {
+  display: grid;
+  grid-template-columns: 48px 200px 80px 100px 1fr 110px;
+  gap: 14px;
+  padding: 12px 16px 10px;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+.c-session {
+  display: grid;
+  grid-template-columns: 48px 200px 80px 100px 1fr 110px;
+  gap: 14px;
+  padding: 12px 16px;
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+}
+.c-session:last-child { border-bottom: none; }
+.c-session .s-no {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.c-session .s-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.c-session .s-region {
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.c-session .s-duration {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.c-session .s-price {
+  text-align: right;
+  white-space: nowrap;
+}
+.c-session .s-price-after {
+  font-family: 'GmarketSans', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #FF3D3D;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.c-session .s-price-orig {
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 12px;
+  color: var(--hint);
+  text-decoration: line-through;
+  text-decoration-color: var(--hint);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 2px;
+  letter-spacing: -0.005em;
+}
+.c-session .s-apply {
+  padding: 8px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-align: center;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 80px;
+}
+.c-session .s-apply:hover { opacity: 0.88; }
+
+@media (max-width: 1100px) {
+  .c-card-head { grid-template-columns: 48px 140px minmax(220px, 1fr) 220px 40px; gap: 18px; }
+  .c-card-head > .c-card-info:not(.c-card-price) { display: none; }
+  .c-sessions-hd, .c-session { grid-template-columns: 48px 200px 80px 100px 1fr 110px; }
+}
+@media (max-width: 760px) {
+  .c-card-head {
+    grid-template-columns: 1fr 32px;
+    gap: 12px;
+    padding: 16px 4px;
+  }
+  .c-card-no, .c-card-info:not(.c-card-price) { display: none; }
+  .c-card-cat { grid-column: 1; }
+  .c-card-name { grid-column: 1; }
+  .c-card-price { grid-column: 1; text-align: left; margin-top: 8px; }
+  .c-card-price-row { justify-content: flex-start; }
+  .c-card-toggle { grid-column: 2; grid-row: 1 / span 5; align-self: center; }
+  .c-sessions-hd { display: none; }
+  .c-session {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    padding: 16px 0;
+  }
+  .c-session .s-no { grid-column: 1 / -1; }
+  .c-session .s-apply { grid-column: 1 / -1; padding: 14px; font-weight: 700; }
+  .c-session .s-price { text-align: left; }
+  .c-session .s-region { font-size: 13px; }
+  .c-session .s-duration { font-size: 12px; color: var(--muted); }
+  .c-card-head { padding: 16px 8px; }
+  .c-card-name { font-size: 14px; }
+  .c-card-price-after { font-size: 19px; }
+}
+</style>
+</head>
+<body data-palette="navy">
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="한국생산성본부 (KPC)">
+      <img class="logo-img" src="assets/kpc-logo.png" alt="한국생산성본부 KPC">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html#funding">지원 안내</a>
+      <a href="index.html#process">신청 프로세스</a>
+      <a href="courses.html" class="active">교육 과정</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="nav-cta" href="https://kpc.or.kr/refund/index.html" target="_blank" rel="noopener">지원 대상 조회 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<section class="list-hero">
+  <div class="container">
+    <div class="list-hero-top">
+      <div class="eyebrow eyebrow-muted">INDEX · 직무교육센터 전체 과정</div>
+      <div class="list-count-pill"><b id="visibleCount">201</b>개 과정 · <span id="sessionCount">575</span>개 차수 표시중</div>
+    </div>
+    <h1 class="list-title">전체 과정</h1>
+    <p class="list-sub">교육비 90% 환급 대상인 직무교육센터 인재키움 과정 리스트입니다.<br>과정명을 클릭하시면 지역·일정별 개설 차수를 확인할 수 있습니다. <br>2026년 6월 – 12월 운영 과정 기준.</p>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-row">
+      <label class="f-field f-search">
+        <span class="f-label">검색</span>
+        <input id="q" class="search-input" placeholder="과정명 검색 (예: ChatGPT, 구매계약, 품질)" autocomplete="off">
+      </label>
+      <label class="f-field">
+        <span class="f-label">분야</span>
+        <select id="fCat" class="select"><option value="">전체 분야</option></select>
+      </label>
+      <label class="f-field">
+        <span class="f-label">지역</span>
+        <select id="fRegion" class="select"><option value="">전체 지역</option></select>
+      </label>
+      <label class="f-field">
+        <span class="f-label">교육 기간</span>
+        <select id="fMonth" class="select"><option value="">전체 기간</option></select>
+      </label>
+      <label class="f-field">
+        <span class="f-label">정렬</span>
+        <select id="fSort" class="select">
+          <option value="sessions">차수 많은 순</option>
+          <option value="date">최신 개강일 순</option>
+          <option value="name">과정명 가나다순</option>
+        </select>
+      </label>
+      <button class="filter-reset" id="fReset">초기화 ⟲</button>
+    </div>
+  </div>
+</div>
+
+<section style="padding: 48px 0 24px;">
+  <div class="container">
+    <div class="c-list" id="courseList"></div>
+
+    <div class="no-results" id="noResults" style="display:none;">
+      <div class="no-results-big">0</div>
+      <div style="font-size: 16px; margin-top: 12px;">검색 결과가 없습니다. 필터를 조정해 보세요.</div>
+    </div>
+
+    <div class="load-more-row" id="loadMoreRow">
+      <div class="infinite-status" id="infiniteStatus">
+        <span class="infinite-dot"></span>
+        <span class="infinite-text"><span id="remaining">0</span>개 과정 더 불러오는 중…</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="help-band">
+  <div class="container help-grid">
+    <div>
+      <div class="eyebrow eyebrow-muted" style="margin-bottom: 16px;">HELP</div>
+      <h3>어떤 과정을 들어야 할지 모르겠다면?</h3>
+      <p>담당자가 재직 중인 회사의 업무와 목표에 맞춰 적합한 과정을 추천해 드립니다.<br>전화 한 통이면 충분합니다.</p>
+    </div>
+    <div class="help-phone">
+      <div class="help-phone-lbl">CONTACT</div>
+      <div class="help-phone-num">02-724-1803</div>
+      <div class="help-phone-sub">~ 1806</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot">
+        <div class="foot-brand-name">인재키움 · 직무교육센터</div>
+        <p class="foot-brand-desc">우선지원대상기업 재직자를 위한 직무 역량 강화 교육.<br>교육비 90% 환급 지원으로 개인의 성장을 함께 돕습니다.</p>
+      </div>
+      <div class="foot">
+        <h4>문의</h4>
+        <ul>
+          <li>02-724-1803</li>
+          <li>02-724-1804</li>
+          <li>02-724-1805</li>
+          <li>02-724-1806</li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>바로가기</h4>
+        <ul>
+          <li><a href="index.html">소개 페이지</a></li>
+          <li><a href="https://kpc.or.kr/refund/index.html" target="_blank" rel="noopener">우선지원기업 조회 ↗</a></li>
+          <li><a href="https://www.kpc.or.kr/PTWED002_recipient.do" target="_blank" rel="noopener">지원 대상자 안내 ↗</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>분야</h4>
+        <ul>
+          <li>마케팅·영업</li>
+          <li>구매·자재</li>
+          <li>생산 / 품질 / R&amp;D</li>
+          <li>ISO / 탄소중립</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>KPC · 한국생산성본부 · 직무교육센터</span>
+      <img class="foot-logo-img" src="assets/kpc-logo.png" alt="한국생산성본부 KPC">
+    </div>
+  </div>
+</footer>
+
+<script>
+document.body.setAttribute('data-palette', 'navy');
+
+/* Data */
+let COURSES = [];
+const PAGE_SIZE = 24;
+let shown = PAGE_SIZE;
+
+const state = { q: '', cat: '', region: '', month: '', sort: 'sessions' };
+const urlCat = new URLSearchParams(location.search).get('cat');
+if (urlCat) state.cat = urlCat;
+
+const fmtKRW = n => '₩ ' + Number(n).toLocaleString('ko-KR');
+function niceDate(s) {
+  if (!s) return '';
+  const [y, m, d] = s.slice(0,10).split('-');
+  return `${y.slice(2)}.${m}.${d}`;
+}
+function dayKr(s) {
+  const names = ['일','월','화','수','목','금','토'];
+  return names[new Date(s).getDay()];
+}
+
+function populateFilters() {
+  const CAT_ORDER = ['생산', '품질', '구매·자재', 'R＆D', 'R&D', '마케팅·영업', '유통·물류·SCM·무역', 'ISO 경영시스템', '탄소중립'];
+  const catRank = c => {
+    const i = CAT_ORDER.indexOf(c);
+    return i === -1 ? 999 : i;
+  };
+  const cats = [...new Set(COURSES.map(c => c.대분류))].sort((a, b) => catRank(a) - catRank(b) || a.localeCompare(b, 'ko'));
+  const cSel = document.getElementById('fCat');
+  cats.forEach(c => {
+    const o = document.createElement('option');
+    o.value = c; o.textContent = c;
+    if (state.cat === c) o.selected = true;
+    cSel.appendChild(o);
+  });
+  const regions = [...new Set(COURSES.flatMap(c => c.regions))];
+  const rSel = document.getElementById('fRegion');
+  regions.forEach(r => {
+    const o = document.createElement('option'); o.value = r; o.textContent = r;
+    rSel.appendChild(o);
+  });
+  const months = [...new Set(COURSES.flatMap(c => c.months))].sort();
+  const mSel = document.getElementById('fMonth');
+  months.forEach(m => {
+    const o = document.createElement('option'); o.value = m;
+    o.textContent = m.replace('-', '년 ') + '월';
+    mSel.appendChild(o);
+  });
+}
+
+function passes(c) {
+  if (state.q) {
+    const q = state.q.toLowerCase();
+    const hay = (c.과정명 + ' ' + c.대분류 + ' ' + c.중분류).toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  if (state.cat && c.대분류 !== state.cat) return false;
+  if (state.region && !c.regions.includes(state.region)) return false;
+  if (state.month && !c.months.includes(state.month)) return false;
+  return true;
+}
+
+function filteredSessions(c) {
+  return c.차수.filter(s => {
+    if (state.region && s.지역 !== state.region) return false;
+    if (state.month && !s.시작일.startsWith(state.month)) return false;
+    return true;
+  });
+}
+
+function getSorted() {
+  const arr = COURSES.filter(passes);
+  switch (state.sort) {
+    case 'sessions': arr.sort((a,b) => b.차수.length - a.차수.length); break;
+    case 'name': arr.sort((a,b) => a.과정명.localeCompare(b.과정명, 'ko')); break;
+    default: arr.sort((a,b) => a.minStart.localeCompare(b.minStart));
+  }
+  return arr;
+}
+
+function render() {
+  const list = getSorted();
+  const wrap = document.getElementById('courseList');
+  wrap.innerHTML = '';
+  const noRes = document.getElementById('noResults');
+  const lmRow = document.getElementById('loadMoreRow');
+
+  document.getElementById('visibleCount').textContent = list.length;
+  const totalSessions = list.reduce((s,c) => s + filteredSessions(c).length, 0);
+  document.getElementById('sessionCount').textContent = totalSessions;
+
+  if (list.length === 0) {
+    noRes.style.display = 'block';
+    lmRow.style.display = 'none';
+    return;
+  }
+  noRes.style.display = 'none';
+
+  const slice = list.slice(0, shown);
+  slice.forEach((c, idx) => {
+    const sessions = filteredSessions(c);
+    const afterMin = Math.round(c.minPrice * 0.1);
+    const afterMax = Math.round(c.maxPrice * 0.1);
+    const priceRange = c.minPrice === c.maxPrice
+      ? fmtKRW(c.minPrice)
+      : `${fmtKRW(c.minPrice)} – ${fmtKRW(c.maxPrice)}`;
+    const afterStr = afterMin === afterMax
+      ? fmtKRW(afterMin)
+      : `${fmtKRW(afterMin)}~`;
+    const firstStart = sessions[0]?.시작일 || c.minStart;
+    const lastStart = sessions[sessions.length-1]?.시작일 || c.maxStart;
+    const dateRange = firstStart === lastStart
+      ? niceDate(firstStart)
+      : `${niceDate(firstStart)} ~ ${niceDate(lastStart)}`;
+
+    const uniqRegions = [...new Set(sessions.map(s => s.지역))];
+    const regionsHtml = uniqRegions.map(r => `<span class="region-tag">${r}</span>`).join('');
+
+    const card = document.createElement('div');
+    card.className = 'c-card';
+    card.innerHTML = `
+      <div class="c-card-head">
+        <div class="c-card-no">${String(idx + 1).padStart(3,'0')}</div>
+        <div class="c-card-cat">
+          <span class="c-card-pill">${c.대분류}</span>
+          <span class="c-card-sub">${c.중분류}</span>
+        </div>
+        <div class="c-card-name">
+          ${c.과정명}
+          <small>${c.일수}일 · ${c.시간}시간 교육</small>
+        </div>
+        <div class="c-card-info">
+          <b>${sessions.length}개 차수</b> 개설
+          <small>${dateRange}</small>
+          <div class="regions">${regionsHtml}</div>
+        </div>
+        <div class="c-card-price">
+          <div class="c-card-price-row"><span class="c-card-price-badge">90% 환급</span><span class="c-card-price-orig">${priceRange}</span></div>
+          <div class="c-card-price-after">${afterStr}<small>부터</small></div>
+        </div>
+        <div class="c-card-toggle">+</div>
+      </div>
+      <div class="c-sessions">
+        <div class="c-sessions-inner">
+          <div class="c-sessions-hd">
+            <div>NO.</div>
+            <div>개강일</div>
+            <div>지역</div>
+            <div>교육 기간</div>
+            <div style="text-align:right;">교육비 / 실부담</div>
+            <div></div>
+          </div>
+          ${sessions.map((s, si) => {
+            const after = Math.round(s.교육비 * 0.1);
+            return `
+              <div class="c-session">
+                <div class="s-no">${String(si+1).padStart(2,'0')}</div>
+                <div class="s-date">${niceDate(s.시작일)} (${dayKr(s.시작일)}) ~ ${niceDate(s.종료일)}</div>
+                <div class="s-region">${s.지역}</div>
+                <div class="s-duration">${s.일수}일 · ${s.시간}h</div>
+                <div class="s-price">
+                  <span class="s-price-orig">${fmtKRW(s.교육비)}</span>
+                  <span class="s-price-after">${fmtKRW(after)}</span>
+                </div>
+                <a class="s-apply" href="${s.링크}" target="_blank" rel="noopener">신청 →</a>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+    const head = card.querySelector('.c-card-head');
+    head.addEventListener('click', () => card.classList.toggle('open'));
+    wrap.appendChild(card);
+  });
+
+  const remaining = list.length - shown;
+  if (remaining > 0) {
+    lmRow.style.display = 'block';
+    document.getElementById('remaining').textContent = remaining;
+  } else {
+    lmRow.style.display = 'none';
+  }
+}
+
+function wireFilters() {
+  const rerender = () => { shown = PAGE_SIZE; render(); };
+  document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; rerender(); });
+  document.getElementById('fCat').addEventListener('change', e => { state.cat = e.target.value; rerender(); });
+  document.getElementById('fRegion').addEventListener('change', e => { state.region = e.target.value; rerender(); });
+  document.getElementById('fMonth').addEventListener('change', e => { state.month = e.target.value; rerender(); });
+  document.getElementById('fSort').addEventListener('change', e => { state.sort = e.target.value; render(); });
+  document.getElementById('fReset').addEventListener('click', () => {
+    state.q = state.cat = state.region = state.month = '';
+    state.sort = 'date';
+    document.getElementById('q').value = '';
+    ['fCat','fRegion','fMonth'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('fSort').value = 'sessions';
+    rerender();
+  });
+}
+
+/* Infinite scroll: auto-load when sentinel comes into view */
+function setupInfiniteScroll() {
+  const sentinel = document.getElementById('loadMoreRow');
+  if (!sentinel || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const en of entries) {
+      if (en.isIntersecting && sentinel.style.display !== 'none') {
+        const list = getSorted();
+        if (shown < list.length) {
+          shown += PAGE_SIZE;
+          render();
+        }
+      }
+    }
+  }, { rootMargin: '400px 0px' });
+  io.observe(sentinel);
+}
+
+fetch('courses_grouped.json').then(r => r.json()).then(data => {
+  COURSES = data;
+  populateFilters();
+  if (state.cat) document.getElementById('fCat').value = state.cat;
+  wireFilters();
+  render();
+  setupInfiniteScroll();
+}).catch(err => {
+  console.error('Failed to load', err);
+  document.getElementById('courseList').innerHTML = '<div style="padding:60px; text-align:center; color:var(--muted);">과정 데이터를 불러오는 중 오류가 발생했습니다.</div>';
+});
+
+/* 모바일 햄버거 토글 */
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+})();
+</script>
+</body>
+</html>
