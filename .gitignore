@@ -1,1 +1,7 @@
-.vercel
+.vercel/
+.claude/
+.DS_Store
+*.log
+.playwright-mcp/
+mobile-*.png
+desktop-*.png
