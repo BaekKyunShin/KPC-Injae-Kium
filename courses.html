@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260428p">
+<link rel="stylesheet" href="styles.css?v=20260428u">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -356,24 +356,28 @@
 
 <div class="filter-bar">
   <div class="container">
-    <div class="filter-row">
+    <div class="filter-row" id="filterRow">
       <label class="f-field f-search">
         <span class="f-label">검색</span>
         <input id="q" class="search-input" placeholder="과정명 검색 (예: ChatGPT, 구매계약, 품질)" autocomplete="off">
       </label>
-      <label class="f-field">
+      <button class="filter-toggle" type="button" aria-expanded="false" aria-controls="filterRow">
+        <span class="filter-toggle-txt">필터</span>
+        <span class="filter-toggle-arrow" aria-hidden="true">▾</span>
+      </button>
+      <label class="f-field f-collapsible">
         <span class="f-label">분야</span>
         <select id="fCat" class="select"><option value="">전체 분야</option></select>
       </label>
-      <label class="f-field">
+      <label class="f-field f-collapsible">
         <span class="f-label">지역</span>
         <select id="fRegion" class="select"><option value="">전체 지역</option></select>
       </label>
-      <label class="f-field">
+      <label class="f-field f-collapsible">
         <span class="f-label">교육 기간</span>
         <select id="fMonth" class="select"><option value="">전체 기간</option></select>
       </label>
-      <label class="f-field">
+      <label class="f-field f-collapsible">
         <span class="f-label">정렬</span>
         <select id="fSort" class="select">
           <option value="sessions">차수 많은 순</option>
@@ -381,7 +385,7 @@
           <option value="name">과정명 가나다순</option>
         </select>
       </label>
-      <button class="filter-reset" id="fReset">초기화 ⟲</button>
+      <button class="filter-reset f-collapsible" id="fReset">초기화 ⟲</button>
     </div>
   </div>
 </div>
@@ -693,6 +697,17 @@ fetch('courses_grouped.json').then(r => r.json()).then(data => {
   console.error('Failed to load', err);
   document.getElementById('courseList').innerHTML = '<div style="padding:60px; text-align:center; color:var(--muted);">과정 데이터를 불러오는 중 오류가 발생했습니다.</div>';
 });
+
+/* 모바일 필터 펼치기/접기 토글 */
+(function () {
+  const btn = document.querySelector('.filter-toggle');
+  const bar = document.querySelector('.filter-bar');
+  if (!btn || !bar) return;
+  btn.addEventListener('click', () => {
+    const open = bar.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', open);
+  });
+})();
 
 /* 모바일 햄버거 토글 */
 (function () {
