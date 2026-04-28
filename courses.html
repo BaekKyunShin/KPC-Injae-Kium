@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260428n">
+<link rel="stylesheet" href="styles.css?v=20260428p">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -300,6 +300,26 @@
   .c-card-head { padding: 16px 8px; }
   .c-card-name { font-size: 14px; }
   .c-card-price-after { font-size: 19px; }
+}
+
+/* 2차 보강 — 폰 전용 콤팩트 (2026-04-28) */
+@media (max-width: 480px) {
+  .c-list { border-top-width: 1px; }
+  .c-card-head { padding: 14px 6px !important; gap: 10px !important; }
+  .c-card-name { font-size: 13px !important; }
+  .c-card-name small { font-size: 11px; }
+  .c-card-pill { font-size: 10px; padding: 3px 7px; }
+  .c-card-sub { font-size: 11px; }
+  .c-card-price-after { font-size: 16px !important; }
+  .c-card-price-orig { font-size: 11px; }
+  .c-card-price-badge { font-size: 9px; padding: 2px 6px; }
+  .c-card-toggle { font-size: 18px !important; }
+  .c-sessions-inner { padding: 4px 4px 12px; }
+  .c-session { padding: 12px 0 !important; font-size: 12px; }
+  .c-session .s-date { font-size: 12px; }
+  .c-session .s-region { font-size: 12px; }
+  .c-session .s-price-after { font-size: 14px; }
+  .c-session .s-apply { font-size: 12px; padding: 12px !important; }
 }
 </style>
 </head>

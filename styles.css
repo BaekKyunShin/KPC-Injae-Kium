@@ -705,3 +705,77 @@ footer { background: var(--ink); color: var(--accent-2); padding: 80px 0 36px; }
   .list-count-pill b { font-size: 18px; }
   .filter-bar { padding: 14px 0; }
 }
+
+/* ============================================================
+   2차 보강 — 모바일 정밀 조정 (2026-04-28)
+   - section padding / heading / 인라인 margin / 폰 전용 ≤480px
+   - 데스크탑(961px+) 출력 변경 없음
+   ============================================================ */
+
+@media (max-width: 720px) {
+  /* section padding 모바일 축소 */
+  .hero-inner-spacing { padding: 64px 0 80px !important; }
+  .section { padding: 72px 0 !important; }
+  .section-tight { padding: 56px 0 !important; }
+  .funding { padding: 72px 0 !important; }
+  .cta-big { padding: 72px 0 !important; }
+  footer { padding: 56px 0 28px !important; }
+  .ticker { padding: 18px 0; font-size: 12px; }
+  .help-band { padding: 64px 0 !important; }
+  .nav-inner { height: 68px; }
+
+  /* heading / 본문 폰트 모바일 사이즈 */
+  .funding-title { font-size: clamp(28px, 7vw, 40px) !important; }
+  .section-hd-title { font-size: clamp(28px, 7vw, 40px) !important; }
+  .cta-big-t { font-size: clamp(28px, 7vw, 44px) !important; }
+  .help-band h3 { font-size: clamp(22px, 6vw, 32px) !important; }
+  .pillar-title { font-size: clamp(22px, 5.5vw, 30px); }
+  .elig-title { font-size: clamp(20px, 5vw, 26px); }
+  .step-title { font-size: 16px; }
+  .cat-name { font-size: 18px; }
+  .faq-q { font-size: 16px !important; padding: 24px 0 !important; gap: 16px !important; }
+  .faq-a-inner { padding: 0 0 24px 32px; font-size: 14px; }
+  .funding-row { font-size: 14px; padding: 14px 0; }
+  .funding-body, .elig-body, .pillar-body { font-size: 14px; line-height: 1.7; }
+  .help-band p { font-size: 14px; }
+  .help-phone-num { font-size: 28px; }
+  .section-hd { margin-bottom: 40px !important; }
+
+  /* 인라인 margin-top 4곳 모바일 축소 (.funding / .elig-cell 내부 + cat 아래 버튼) */
+  .funding [style*="margin-top: 40px"] { margin-top: 24px !important; }
+  .elig-cell [style*="margin-top: 40px"] { margin-top: 24px !important; }
+  [style*="margin-top: 64px"] { margin-top: 36px !important; }
+}
+
+/* ≤480px — 폰 전용 콤팩트 */
+@media (max-width: 480px) {
+  .container { padding: 0 18px !important; }
+  .hero-inner-spacing { padding: 48px 0 64px !important; }
+  .section { padding: 56px 0 !important; }
+  .funding { padding: 56px 0 !important; }
+  .cta-big { padding: 56px 0 !important; }
+  footer { padding: 48px 0 24px !important; }
+  .help-band { padding: 48px 0 !important; }
+  .nav-inner { height: 64px !important; }
+
+  .hero-title { font-size: clamp(28px, 11vw, 42px) !important; line-height: 1.2 !important; }
+  .hero-sub { font-size: clamp(13px, 3.6vw, 16px) !important; }
+  .hero-donut svg { max-width: 180px !important; }
+  .hero-num-big { font-size: clamp(26px, 8vw, 36px); }
+  .stat-num { font-size: clamp(22px, 6vw, 30px); }
+
+  .funding-title { font-size: clamp(24px, 8vw, 32px) !important; }
+  .section-hd-title { font-size: clamp(24px, 8vw, 32px) !important; }
+  .cta-big-t { font-size: clamp(24px, 8vw, 36px) !important; }
+  .help-band h3 { font-size: clamp(20px, 6.5vw, 26px) !important; }
+  .list-title { font-size: clamp(28px, 8vw, 36px) !important; }
+
+  .btn { font-size: 14px; padding: 12px 20px; }
+  .funding-eye, .step-eye, .pillar-eye { font-size: 11px; }
+  .section-hd { margin-bottom: 28px !important; }
+
+  /* 인라인 margin 더 축소 */
+  .funding [style*="margin-top: 40px"] { margin-top: 20px !important; }
+  .elig-cell [style*="margin-top: 40px"] { margin-top: 20px !important; }
+  [style*="margin-top: 64px"] { margin-top: 28px !important; }
+}
