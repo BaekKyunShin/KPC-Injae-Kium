@@ -183,6 +183,25 @@ function buildGrouped(rawRows) {
   return result;
 }
 
+function patchHtmlCounts(filename, courseCount, sessionCount) {
+  const full = join(ROOT, filename);
+  let html;
+  try {
+    html = readFileSync(full, 'utf8');
+  } catch {
+    return; // 파일 없으면 무시
+  }
+  const before = html;
+  const cMatches = (html.match(/<!--C-->[^<]*<!--\/C-->/g) || []).length;
+  const sMatches = (html.match(/<!--S-->[^<]*<!--\/S-->/g) || []).length;
+  html = html.replace(/<!--C-->[^<]*<!--\/C-->/g, `<!--C-->${courseCount}<!--/C-->`);
+  html = html.replace(/<!--S-->[^<]*<!--\/S-->/g, `<!--S-->${sessionCount}<!--/S-->`);
+  if (html !== before) writeFileSync(full, html, 'utf8');
+  console.log(
+    `[build-courses] ${filename}: 과정 마커 ${cMatches}개 / 차수 마커 ${sMatches}개 갱신`
+  );
+}
+
 function main() {
   const file = pickLatestXlsx(DATA_DIR);
   console.log(`[build-courses] 읽는 파일: data/${file.name}`);
@@ -202,6 +221,10 @@ function main() {
 
   writeFileSync(OUTPUT, JSON.stringify(grouped, null, 0) + '\n', 'utf8');
   console.log(`[build-courses] 완료: ${OUTPUT}`);
+
+  // HTML 정적 카운트 자동 갱신
+  patchHtmlCounts('index.html', grouped.length, totalSessions);
+  patchHtmlCounts('courses.html', grouped.length, totalSessions);
 }
 
 main();
