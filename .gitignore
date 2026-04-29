@@ -5,3 +5,7 @@
 .playwright-mcp/
 mobile-*.png
 desktop-*.png
+node_modules/
+data/*.xlsx
+data/*.xls
+data/*.csv

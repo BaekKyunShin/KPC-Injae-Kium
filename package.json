@@ -1,0 +1,11 @@
+{
+  "name": "injae-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:courses": "node scripts/build-courses.mjs"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
